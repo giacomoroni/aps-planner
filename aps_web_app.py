@@ -5,6 +5,7 @@ import streamlit as st
 from datetime import datetime, timedelta
 import plotly.express as px
 
+st.write("VERSIONE APS 2.0 - Google Sheets")
 st.title("APS Planner Web App")
 
 # 🔗 LINK GOOGLE SHEETS (già trasformato)
