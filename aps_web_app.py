@@ -11,11 +11,12 @@ st.title("APS Planner Web App")
 file_url = "https://docs.google.com/spreadsheets/d/1wD-kjvBqUwgEov4lCdx5QedwuhtUsJPveHqfGZkECao/export?format=xlsx"
 
 try:
-    ordini = pd.read_excel(file_url, sheet_name="Ordini")
+ordini = pd.read_excel(file_url, sheet_name="Ordini")
     param = pd.read_excel(file_url, sheet_name="Parametri")
-except:
-    st.error("Errore nel caricamento dati da Google Sheets")
+except Exception as e:
+    st.error(f"Errore caricamento: {e}")
     st.stop()
+
 
 # ✅ PULIZIA COLONNE
 ordini.columns = ordini.columns.str.strip()
